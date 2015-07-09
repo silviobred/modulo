@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    
+    <h:head>
+        <title>Modulo RH</title>
+    </h:head>
+    <h:body>
+        <h1>Consulta de Setor</h1>
+        <h:form>
+            
+            <h:outputLabel for = "nome" value ="Nome do setor:"/>
+            <h:inputText id="nomeText" value="#{setorBean.setor.nomePesq}" />    
+             <h:commandButton value="Enviar" action="#{setorBean.consultaNome}"/><br/>  <br/> 
+             
+            <!-- <h:outputLabel for = "setorResponsavel" value ="Setor responsavel:"/>
+            <select name="setor.id"> 
+                    <c:forEach var="setor" items="${ListaDeNomesSetores}">    
+                        <option value="${setor.id}">${setor.nome}</option>    
+                    </c:forEach>    
+                </select> 
+             <h:commandButton value="Enviar" action="#{setorBean.consultarPorNome}"/><br/>  <br/> -->
+             
+                       
+        </h:form>
+        
+    </h:body>
+    
+</html>

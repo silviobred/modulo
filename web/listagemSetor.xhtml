@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    
+    <h:head>
+        <title>Modulo RH</title>
+    </h:head>
+    <body>
+        <div>Listagem de Setores</div>
+        <h:form>
+           <h:dataTable value="#{setorBean.listarSetores()}" var="setor" border="1" id="setor" >
+                <h:column>
+                    <f:facet name="header">
+                        ID
+                    </f:facet>
+                    <h:outputText value="#{setor.id}"/>
+                </h:column>
+               
+               <h:column>
+                    <f:facet name="header">
+                        Nome
+                    </f:facet>
+                   <h:outputText value="#{setor.nome}"/>
+                   </h:column>
+               
+               <h:column>
+                    <f:facet name="header">
+                        Responsavel
+                    </f:facet>
+                   <h:outputText value="#{setor.responsavel}"/>
+                   </h:column>
+               
+               <h:column>
+                    <f:facet name="header">
+                        Descricao
+                    </f:facet>
+                   <h:outputText value="#{setor.descricao}"/>
+                   </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        Email
+                    </f:facet>
+                   <h:outputText value="#{setor.email}"/>
+                   </h:column>
+               <h:column>
+                    <f:facet name="header">
+                        Setor Responsavel
+                    </f:facet>
+                   <h:outputText value="#{setor.setorResponsavel}"/>
+                   </h:column>
+               
+               
+               <h:column>
+
+               <f:facet name="header">
+                   Atualizar/Remover
+                
+                    </f:facet>
+                    <h:commandLink value="Remover" action="#{setorBean.removerSetor(setor)}"/>
+                    |<h:commandLink value="Atualizar" action="#{setorBean.carregarSetor(setor)}"/>
+
+                </h:column>
+            </h:dataTable>
+
+            <h:commandLink value="Cadastrar" action="cadastrar"/><br/>
+            <h:commandLink value="Consulta" action="consulta"/>
+
+
+               
+               
+               
+      
+        </h:form>  
+        
+    </body>
+</html>
